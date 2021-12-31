@@ -1,14 +1,10 @@
 import java.util.*;
-/**
- * class LeagueAdmin for TMA03Q2.
- * 
- * @author (M250 module team) 
- * @version (1.0)
- */
+
+
 public class LeagueAdmin
 {
    private Map<String, List<Team>> teams;
-   
+
    /**
     * Constructor for objects of class LeagueAdmin
     */
@@ -18,12 +14,12 @@ public class LeagueAdmin
    }
 
    /**
-    * Adds a team to an existing league or create a new league and 
+    * Adds a team to an existing league or create a new league and
     * then add the team to it.
     */
    public void addTeam(String division, Team team)
    {
-      
+
       if (teams.containsKey(division))
       {
          List<Team> list1 = teams.get(division);
@@ -36,7 +32,7 @@ public class LeagueAdmin
          teams.put(division, list2);
       }
    }
-   
+
    /**
     * Increments the number of wins, losses and draws
     * of a team based on the score against another
@@ -47,7 +43,7 @@ public class LeagueAdmin
       List<Team> list3 = teams.get(division);
       int team1 = -1;
       int team2 = -1;
-      
+
       for (Team t1 : list3)
       {
          if (t1.getName().equals(teamA))
@@ -55,22 +51,22 @@ public class LeagueAdmin
             team1 = list3.indexOf(t1);
          }
       }
-      
-      
+
+
       for (Team t2 : list3)
       {
          if (t2.getName().equals(teamB))
          {
             team2 = list3.indexOf(t2);
          }
-         
+
       }
-      
+
       if (!(team1 == -1)  || (team2 == -1))
       {
          Team firstTeam = list3.get(team1);
          Team secondTeam = list3.get(team2);
-         
+
          if (teamAScore > teamBScore)
          {
             firstTeam.incWon();
@@ -91,12 +87,12 @@ public class LeagueAdmin
       {
          System.out.println("One or both teams do not exist. Please try again.");
       }
-      
+
    }
-   
+
    /**
-    * Prints out the division, then a line giving the header 
-    * for the items being printed out, then print out the 
+    * Prints out the division, then a line giving the header
+    * for the items being printed out, then print out the
     * statistics for each of the teams in the list for that division.
     */
    public void printOutTable(String division)
@@ -113,8 +109,8 @@ public class LeagueAdmin
          System.out.println(results);
          System.out.println("");
       }
-      
-      
+
+
    }
 
 }

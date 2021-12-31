@@ -1,18 +1,11 @@
-
-/**
- * class Team for TMA03Q2.
- * 
- * @author (M250 module team) 
- * @version (1.0)
- */
 public class Team
-{  
+{
    private String name;
    private String division;
    private int won;
    private int drew;
    private int lost;
-// no need to record points as = 3*won + drew   
+// no need to record points as = 3*won + drew
 
 
    /**
@@ -24,8 +17,8 @@ public class Team
       division = aDivision;
       // no need to set won, drew and lost to 0
    }
-   
-   
+
+
    /**
     * getter for attribute points
     */
@@ -33,7 +26,7 @@ public class Team
    {
       return 3 * won + drew;
    }
-   
+
    /**
     * getter for name
     */
@@ -41,7 +34,7 @@ public class Team
    {
       return name;
    }
-   
+
    /**
     * getter for division
     */
@@ -55,8 +48,8 @@ public class Team
    public int getWon()
    {
       return won;
-   }   
-   
+   }
+
    /**
     * getter for drew
     */
@@ -64,18 +57,18 @@ public class Team
    {
       return drew;
    }
-   
+
    /**
     * getter for lost
     */
    public int getLost()
    {
       return lost;
-   }   
-   
+   }
+
    /**
     * increments the number of games won
-    */   
+    */
    public void incWon()
    {
       won = won + 1;
@@ -83,15 +76,15 @@ public class Team
 
    /**
     * increments the number of games drawn
-    */    
+    */
    public void incDrew()
    {
       drew = drew + 1;
    }
-   
+
    /**
     * increments the number of games lost
-    */    
+    */
    public void incLost()
    {
       lost = lost + 1;
@@ -104,12 +97,12 @@ public class Team
    {
       division = aDivision;
    }
-   
+
    public String toString()
    {
       return ("Team " + name + ", division: " + division + " stats: Won: " + won
        + ", drew: " + drew + ", lost: " + lost + ", points: " + getPoints());
    }
 
-   
+
 }
